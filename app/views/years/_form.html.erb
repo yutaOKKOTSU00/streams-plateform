@@ -1,0 +1,22 @@
+<%= form_with model: year do |form| %>
+  <% if year.errors.any? %>
+    <% year.errors.full_messages.each do |msg| %>
+      <p><%= msg %> </p>
+    <% end %>
+  <% end %>
+
+  <div>
+    <%= form.label :name, "Year name" %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <p>Is Current Year</p>
+    <%= form.radio_button :current_year, true, checked: true %>
+    <%= label :current_year, "Yes", value: true %>
+    <%= form.radio_button :current_year, false %>
+    <%= label :current_year, "No", value: false %>
+  </div>
+
+  <%= form.submit "Save" %>
+<% end %>
