@@ -1,0 +1,18 @@
+<h1>Platforms</h1>
+<table >
+  <thead>
+    <tr>
+      <% %w[Name Rate].each do |head| %>
+        <th> <%= head %> </th>
+      <% end %>
+      <th colspan=3>Actions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @platforms.each do |platform| %>
+      <%= render platform %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Platform", new_platform_path %>
+<%= link_to "Home", root_path %>

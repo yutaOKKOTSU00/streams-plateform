@@ -1,0 +1,36 @@
+<%= form_with model: platform do |form| %>
+  
+  <div>
+    <% if platform.errors[:name].any? %>
+      <%= platform.errors[:name].to_sentence %>
+    <% end %>
+    <%= form.label :name, "Name" %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <% if platform.errors[:creation].any? %>
+      <%= platform.errors[:creation].to_sentence %>
+    <% end %>
+    <%= form.label :creation, "Creation Date" %><br>
+    <%= form.date_field :creation %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Description" %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div> 
+    <%= form.label :rate, "Rate" %><br>
+    <%= form.number_field :rate %>
+  </div>
+
+  <div>
+    <%= form.label :daily_request, "Daily Requests" %><br>
+    <%= form.number_field :daily_request %>
+  </div>
+
+  <%= form.submit "Save" %>
+
+<% end %>
