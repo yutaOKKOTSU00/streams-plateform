@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_11_131717) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_11_132225) do
   create_table "platforms", force: :cascade do |t|
     t.string "name"
     t.date "creation"
     t.integer "rate"
     t.integer "dail_requests"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "years", force: :cascade do |t|
+    t.date "name"
+    t.boolean "current_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,31 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+<h1>Years</h1>
+<table>
+  <thead>
+    <tr>
+      <% %w[Name Current_Year].each do |item| %>
+        <th><%= item %></th>
+      <% end %>
+      <th colspan=2>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @years.each do |year| %>
+      <tr>
+        <td><%= year.name%> </td>
+        <% if year.current_year %>
+          <td>Actif</td>
+        <% else %>
+          <td>inactif</td>
+        <% end %>
+        <td> <%= link_to "Edit", edit_year_path(year) %> </td>
+        <td> <%= button_to "Delete", year_path(year), method: :delete,
+          form: {data: {turbo_confirm: "Are you sure to delete this year"}} %> </td>
+      </tr>
+    <% end %> 
+  </tbody>
+</table>
+<%= link_to "New Year", new_year_path %>
+<%= link_to "Home", root_path %>
