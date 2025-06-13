@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_11_132225) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_13_135455) do
+  create_table "performers", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.date "birth"
+    t.string "nationality"
+    t.boolean "statut"
+    t.integer "awards"
+    t.integer "platforms"
+    t.integer "rate"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "platforms", force: :cascade do |t|
     t.string "name"
     t.date "creation"

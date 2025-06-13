@@ -1,0 +1,9 @@
+<td><%= performer.firstname %></td>
+<td><%= performer.birth %></td>
+<td><%= performer.statut %></td>
+<td><%= performer.rate %></td>
+<td><%= performer.awards %></td>
+<td><%= link_to "Display", performer_path(performer) %></td>
+<td><%= link_to "Edit", edit_performer_path(performer) %></td>
+<td><%= button_to "Delete", performer_path(performer), method: :delete,
+form: {data: {turbo_confirm: "Are you sure to want to delete this performer ? "} } %>
