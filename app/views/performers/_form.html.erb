@@ -1,0 +1,57 @@
+<%= form_with model: performer do |form| %>
+
+  <% if performer.errors.any? %>
+    <% performer.errors.full_message do |msg| %>
+      <%= msg.to_sentence %>
+    <% end %>
+  <% end %>
+
+  <div>
+    <%= form.label :firstName, "Firstname" %><br>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div>
+    <%= form.label :lastname, "LastName" %><br>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div>
+    <%= form.label :birth, "Birth Date" %><br>
+    <%= form.date_field :birth %>
+  </div>
+
+  <div>
+    <%= form.label :nationality, "Nationality" %><br>
+    <%= form.text_field :nationality %>
+  </div>
+
+  <div>
+    <%= form.radio_button :statut, "true", checked: true %>
+    <%= form.label :statut_true, "Actif" %>
+    <%= form.radio_button :statut, "false" %>
+    <%= form.label :statut_false, "Inactif" %>
+  </div>
+
+  <div>
+    <%= form.label :awards, "Awards" %><br>
+    <%= form.number_field :awards, in: 0..5, step: 1 %>
+  </div>
+
+  <div>
+    <%= form.label :platforms, "Platfoms" %><br>
+    <%= form.number_field :platforms, in: 1..10, step: 1 %>
+  </div>
+
+  <div>
+    <%= form.label :rate, "Rate" %><br>
+    <%= form.number_field :rate, in: 1.0..100.0, step: 0.25 %>
+  </div>
+
+  <div>
+    <%= form.label :description, "Description" %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <%= form.submit "Save" %>
+<% end %>

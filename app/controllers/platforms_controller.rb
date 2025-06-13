@@ -45,7 +45,7 @@ class PlatformsController < ApplicationController
   end
 
   def platform_params
-    params.require(:platform).permit(:name, :creation, :description, :rate, :daily_request)
+    params.require(:platform).permit(:name, :creation, :description, :rate, :dail_requests)
   end
 
 end

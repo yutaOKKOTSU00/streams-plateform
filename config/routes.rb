@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :performers
   resources :platforms
   resources :years
   root "homes#index"

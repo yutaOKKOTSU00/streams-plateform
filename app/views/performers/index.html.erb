@@ -1,0 +1,23 @@
+<% if notice %>
+  <%= notice %>
+<% end %>
+<h1> PERFORMERS </h1>
+  <table>
+    <thead>
+      <tr>
+        <% %w[Name age statut rate awards].each do |item| %>
+          <th><%= item %></th>
+        <% end %>
+        <th colspan=3>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @performers.each do |performer| %>
+      <tr>
+        <%= render performer %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to "Home", root_path %>
+<%= link_to "Add Performer", new_performer_path %>

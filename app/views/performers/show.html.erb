@@ -1,0 +1,10 @@
+<h2><%= @performer.firstname%> <%=@performer.lastname %></h2>
+<%= @performer.description %>
+<p>Birth Date <%= @performer.birth %></p>
+<p>Nationality <%= @performer.nationality %></p>
+<p>Awards <%= @performer.awards %></p>
+<p>Subscribed Platfoms number <%= @performer.platforms %> </p>
+<p>Rate <%= @performer.rate %></p>
+<p>status: <%= @performer.statut %></p><br>
+<%= link_to "Back", performers_path %>
+<%= link_to "Edit", edit_performer_path %>
