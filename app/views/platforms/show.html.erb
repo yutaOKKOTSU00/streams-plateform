@@ -5,8 +5,8 @@
 <h3> created at <%= @platform.creation %> </h3>
 <%= @platform.description %>
 <p> Rate <%= @platform.rate %> <p>
-<p> Daily Requests <%= @platform.daily_request %> </p>
-<%= link_to "Platforms", platforms_path %>
+<p> Daily Requests <%= @platform.dail_requests %> </p>
+<%= link_to "Back", platforms_path %>
 <%= link_to "Edit", edit_platform_path %>
 <%= button_to "Delete", platform_path, method: :delete,
 form: { data: { turbo_confirm: "Are you sure ?" } } %>
