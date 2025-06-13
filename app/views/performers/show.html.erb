@@ -5,10 +5,6 @@
 <p>Awards <%= @performer.awards %></p>
 <p>Subscribed Platfoms number <%= @performer.platforms %> </p>
 <p>Rate <%= @performer.rate %></p>
-<% if @performer.statut %>
-  Actif
-<% else %>
-  Inactif
-<% end %><br>
+<p>status: <%= @performer.statut %></p><br>
 <%= link_to "Back", performers_path %>
 <%= link_to "Edit", edit_performer_path %>
